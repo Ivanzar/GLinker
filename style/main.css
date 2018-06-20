@@ -1,0 +1,172 @@
+body
+{
+    margin: auto;
+    max-width: 600px;
+}
+
+#search_block
+{
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 10px;
+}
+
+/*#search_block *
+{
+    font-family: Roboto, sans-serif;
+}*/
+
+#search_block_settings
+{
+    margin-right: 10px;
+    color: #37474f;
+
+    cursor: pointer;
+}
+
+#search_block_settings--dropdwon_content
+{
+    display: none;
+    position: absolute;
+    left: 5px;
+    background-color: #fff;
+    z-index: 300;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#search_block_settings--dropdwon_content > div
+{ 
+    padding: 10px;
+}
+
+#search_block_settings--dropdwon_content > div > div
+{
+    white-space: nowrap;
+    display: inline-block;
+}
+
+#search_block_settings:hover #search_block_settings--dropdwon_content
+{
+    display: block;
+}
+
+#search_area
+{
+    height: 30px;
+    outline: 0;
+
+    flex: 1;
+
+    padding: 0 10px;
+
+    font-family: Roboto, sans-serif;
+
+    cursor: pointer;
+}
+
+#search_area:focus
+{
+    border: 2px solid rgba(85,172,238 ,1);
+}
+
+button
+{
+    height: 30px;
+    padding: 0 10px;
+
+    font-size: 0.8em;
+    border: 0;
+    background: rgba(85,172,238 ,1);
+    color: #fff;
+    border-radius: 5px;
+    outline: 0;
+
+    text-transform: uppercase;
+
+    font-family: Roboto, sans-serif;
+
+    cursor: pointer;
+}
+
+button:active
+{
+    /*background-color: rgb(47, 130, 193);*/
+
+    padding: 0 8px;
+    border: 2px solid rgba(85,172,238 ,1);
+    background: #fff;
+    color: rgba(85,172,238 ,1);
+}
+
+#gen_button
+{
+    margin-left: 10px;
+}
+
+#desc
+{
+    color: #263238;
+
+    word-wrap: break-word;
+}
+
+#content textarea
+{
+    width: 100%;
+    min-height: 300px;
+    max-width: 600px;
+}
+
+#copy_button
+{
+    margin-top: 10px;
+}
+
+#popup_dailog
+{
+    display: none;
+    
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    
+    transform: translateX(-50%);
+    
+    max-width: 300px;
+    
+    background-color: #fff;
+    color: #263238;
+    
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    
+    z-index: 300;
+}
+
+#popup_dailog--content
+{
+    padding: 10px;
+}
+
+#popup_dailog--button
+{
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#popup_dailog--content *
+{
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+p, li, span
+{
+    font-size: 120%;
+}

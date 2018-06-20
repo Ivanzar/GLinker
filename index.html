@@ -1,0 +1,62 @@
+<title>GLinker - сервис генерации ссылок для GOLOS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" 
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<link rel="stylesheet" href="style/main.css">
+
+<body onload="MainPageView.render()">
+    <div id="search_block">
+        <div id="search_block_settings">
+            <i class="material-icons">settings</i>
+            <div id="search_block_settings--dropdwon"
+                 style="position: absolute">
+                <div id="search_block_settings--dropdwon_content">
+                    <div>
+                        <div>
+                            <input type="checkbox" id="check_golosio" checked="">
+                            <label for="subscribeNews">Golos.io</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="check_golosblog" checked="">
+                            <label for="check_golosblog">Golos.blog</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="check_goldvoice" checked="">
+                            <label for="check_goldvoice">GoldVoice.club</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input id="search_area" placeholder="Введите ссылку на статью"/>
+        <button id="gen_button" onclick="MainPageView.genClick()">Генерировать</button>
+    </div>
+
+    <div id="content">
+
+    </div>
+
+    <div id="popup_dailog">
+        <div id="popup_dailog--content"></div>
+        <button id="popup_dailog--button" onclick="MainPageView.popButClick()">ОК</button>
+    </div>
+    
+    <script src="script/mvc.js"></script>
+    <script src="script/main_page.js"></script>
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script src="lib/golos.min.js"></script>
+
+
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.8.6/dist/showdown.min.js"></script>
+    <script src="https://rawgit.com/leizongmin/js-xss/master/dist/xss.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+
+</body>
