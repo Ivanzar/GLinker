@@ -46,6 +46,7 @@ MainPageView.genClick = function ()
                 var golosio = "";
                 var golosblog = "";
                 var goldvoice = "";
+                var oneplace = "";
 
                 if ($("#check_golosio").prop("checked"))
                     golosio = "https://golos.io" + result.url + "\n\n";
@@ -54,13 +55,16 @@ MainPageView.genClick = function ()
                     golosblog = "https://golos.blog" + result.url + "\n\n";
 
                 if ($("#check_goldvoice").prop("checked"))
-                    goldvoice = "https://goldvoice.club/@" + author + "/" + permlink;
+                    goldvoice = "https://goldvoice.club/@" + author + "/" + permlink + "\n\n";
+                if ($("#check_oneplace").prop("checked"))
+                    oneplace = "https://oneplace.media/g/@" + author + "/" + permlink;
 
                 $("#content").html(
                         "<textarea id='links-area'>"
                         + golosio
                         + golosblog
                         + goldvoice
+                        + oneplace
                         + "</textarea>"
                         + "<button id='copy_button' "
                         + "data-clipboard-action='copy' data-clipboard-target='#links-area'"

@@ -15,6 +15,7 @@ GLinker генерирует ссылки для следующих веб-ин�
 * [Golos.io](https://golos.io/)
 * [Golos.blog](https://golos.blog/)
 * [GoldVoice.club](https://goldvoice.club/)
+* [OnePlace](https://oneplace.media/g/)
 
 ## Как это работает
 

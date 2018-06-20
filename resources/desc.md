@@ -15,6 +15,7 @@ GLinker генерирует ссылки для следующих веб-ин�
 * [Golos.io](https://golos.io/)
 * [Golos.blog](https://golos.blog/)
 * [GoldVoice.club](https://goldvoice.club/)
+* [OnePlace](https://oneplace.media/g/)
 
 ## Как это работает
 
@@ -23,8 +24,8 @@ GLinker генерирует ссылки для следующих веб-ин�
 
 Примеры для golos.io, golos.blog и goldvoice.club. Нужная часть выделена **жирным**:
 
-https://golos.io/tag_name/@**author/permlink**
+https&#58;//golos.io/tag_name/@**author/permlink**
 
-https://golos.blog/tag_name/@**author/permlink**
+https&#58;//golos.blog/tag_name/@**author/permlink**
 
-https://goldvoice.club/@**author/permlink**/
+https&#58;//goldvoice.club/@**author/permlink**/
