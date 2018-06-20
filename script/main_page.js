@@ -43,17 +43,17 @@ MainPageView.genClick = function ()
 
             if (result.id !== 0)
             {
-                var golosio;
-                var golosblog;
-                var goldvoice;
+                var golosio = "";
+                var golosblog = "";
+                var goldvoice = "";
 
-                if ($("#check_golosio").attr("checked"))
+                if ($("#check_golosio").prop("checked"))
                     golosio = "https://golos.io" + result.url + "\n\n";
 
-                if ($("#check_golosblog").attr("checked"))
+                if ($("#check_golosblog").prop("checked"))
                     golosblog = "https://golos.blog" + result.url + "\n\n";
 
-                if ($("#check_goldvoice").attr("checked"))
+                if ($("#check_goldvoice").prop("checked"))
                     goldvoice = "https://goldvoice.club/@" + author + "/" + permlink;
 
                 $("#content").html(
