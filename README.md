@@ -16,6 +16,7 @@ GLinker генерирует ссылки для следующих веб-ин�
 * [Golos.blog](https://golos.blog/)
 * [GoldVoice.club](https://goldvoice.club/)
 * [OnePlace](https://oneplace.media/g/)
+* [MemesTagram.io](https://memestagram.io)
 
 ## Как это работает
 

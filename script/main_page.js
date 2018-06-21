@@ -5,6 +5,26 @@ MainPageView.render = function ()
 {
     $.ajax(
             {
+                url: "resources/sites.json",
+                success: function (result)
+                {
+                    var sources = result.sources;
+
+                    for (var key in sources)
+                    {
+                        $("#search_block_settings--dropdwon_content > div").append(
+                                "<div>"
+                                + "<input type='checkbox' "
+                                + (sources[key].checked ? "checked" : "")
+                                + ">"
+                                + "<label>" + sources[key].name + "</label>"
+                                + "</div>");
+                    }
+                }
+            });
+
+    $.ajax(
+            {
                 url: "resources/desc.md",
                 success: function (result)
                 {
@@ -43,37 +63,67 @@ MainPageView.genClick = function ()
 
             if (result.id !== 0)
             {
-                var golosio = "";
-                var golosblog = "";
-                var goldvoice = "";
-                var oneplace = "";
+//                var golosio = "";
+//                var golosblog = "";
+//                var goldvoice = "";
+//                var oneplace = "";
+//
+//                if ($("#check_golosio").prop("checked"))
+//                    golosio = "https://golos.io" + result.url + "\n\n";
+//
+//                if ($("#check_golosblog").prop("checked"))
+//                    golosblog = "https://golos.blog" + result.url + "\n\n";
+//
+//                if ($("#check_goldvoice").prop("checked"))
+//                    goldvoice = "https://goldvoice.club/@" + author + "/" + permlink + "\n\n";
+//                if ($("#check_oneplace").prop("checked"))
+//                    oneplace = "https://oneplace.media/g/@" + author + "/" + permlink;
 
-                if ($("#check_golosio").prop("checked"))
-                    golosio = "https://golos.io" + result.url + "\n\n";
+                $.ajax(
+                        {
+                            url: "resources/sites.json",
+                            success: function (sresult)
+                            {
+                                var sources = sresult.sources;
+                                var links = [];
 
-                if ($("#check_golosblog").prop("checked"))
-                    golosblog = "https://golos.blog" + result.url + "\n\n";
+                                $("input[type=checkbox]").each(function (index)
+                                {
+                                    if ($(this).prop("checked"))
+                                    {
 
-                if ($("#check_goldvoice").prop("checked"))
-                    goldvoice = "https://goldvoice.club/@" + author + "/" + permlink + "\n\n";
-                if ($("#check_oneplace").prop("checked"))
-                    oneplace = "https://oneplace.media/g/@" + author + "/" + permlink;
+                                        /**
+                                         * 
+                                         * @type string
+                                         */
+                                        var link = sources[index].link;
 
-                $("#content").html(
-                        "<textarea id='links-area'>"
-                        + golosio
-                        + golosblog
-                        + goldvoice
-                        + oneplace
-                        + "</textarea>"
-                        + "<button id='copy_button' "
-                        + "data-clipboard-action='copy' data-clipboard-target='#links-area'"
-                        + " >"
-                        + "Копировать"
-                        + "</button>");
-                
-                new ClipboardJS('#copy_button');
-                
+                                        var match = link.match(/{{[a-z_]+}}/g);
+
+                                        for (let key in match)
+                                        {
+                                            link = link.replace(match[key], result[match[key].replace(/{{|}}/g, "")]);
+                                        }
+
+                                        links.push(link);
+                                    }
+
+                                });
+
+                                $("#content").html(
+                                        "<textarea id='links-area'>"
+                                        + links.join("\n\n")
+                                        + "</textarea>"
+                                        + "<button id='copy_button' "
+                                        + "data-clipboard-action='copy' data-clipboard-target='#links-area'"
+                                        + " >"
+                                        + "Копировать"
+                                        + "</button>");
+
+                                new ClipboardJS('#copy_button');
+                            }
+                        });
+
 //                onclick='MainPageView.copyClick()'
             } else
             {

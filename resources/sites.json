@@ -1,0 +1,30 @@
+
+{
+    "sources": [
+        {
+            "name": "Golos.io",
+            "link": "https://golos.io{{url}}",
+            "checked": true
+        },
+        {
+            "name": "Golos.blog",
+            "link": "https://golos.blog{{url}}",
+            "checked": true
+        },
+        {
+            "name": "GoldVoice.club",
+            "link": "https://goldvoice.club/@{{author}}/{{permlink}}",
+            "checked": true
+        },
+        {
+            "name": "OnePlace.media",
+            "link": "https://oneplace.media/g/@{{author}}/{{permlink}}",
+            "checked": false
+        },
+        {
+            "name": "MemesTagram.io",
+            "link": "https://memestagram.io/card/{{author}}/{{permlink}}",
+            "checked": false
+        }
+    ]
+}
